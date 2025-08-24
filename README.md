@@ -21,5 +21,3 @@ The project covers **device-level (NMOS/PMOS)** analysis, **CMOS inverter behavi
 - **SKY130 PDK** – process design kit  
 
 ---
-
-## 📂 Repository Structure
