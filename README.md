@@ -63,7 +63,7 @@ MOSFET I–V characteristics help understand device behavior in linear, saturati
 
 #### **PMOS**
 **Schematic:**  
-![PMOS Schematic](CMOS_DIGITAL_ANALYSIS_SCREENSHOTS/pmos_sch.png)
+![PMOS Schematic](CMOS_DIGITAL_ANALYSIS_SCREENSHOTS/pmos2_sch.png)
 
 **I–V Characteristics:**  
 ![PMOS I–V Plot](CMOS_DIGITAL_ANALYSIS_SCREENSHOTS/pmos_wave.png)
