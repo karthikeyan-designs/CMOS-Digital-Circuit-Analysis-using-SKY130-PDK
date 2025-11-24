@@ -59,6 +59,12 @@ MOSFET I–V characteristics help understand device behavior in linear, saturati
 **I–V Characteristics NMOS:**  
 ![NMOS I–V Plot](CMOS_DIGITAL_ANALYSIS_SCREENSHOTS/nmos_wave.png)
 
+**Explanation:**  
+In the *ID–VGS* curve, the current stays almost zero when **VGS < VTH** — this is the **cutoff region**, where no channel is formed.  
+Once **VGS crosses VTH**, the channel begins to form and the drain current increases; this corresponds to the **linear/ohmic region**.  
+When the condition **VDS ≥ VGS – VTH** is met, the MOSFET enters **saturation**, visible as the flatter portion of the curve.  
+A slight upward slope even in saturation is due to **channel-length modulation**, where ID increases slightly with VDS.
+
 ---
 
 #### **PMOS**
@@ -68,6 +74,11 @@ MOSFET I–V characteristics help understand device behavior in linear, saturati
 **I–V Characteristics PMOS:**  
 ![PMOS I–V Plot](CMOS_DIGITAL_ANALYSIS_SCREENSHOTS/pmos_wave.png)
 
+**Explanation:**  
+In the *ID–VGS (or ID–VSG)* curve for PMOS, the drain current is nearly zero when **VSG < |VTP|**, indicating the **cutoff region**.  
+When **VSG exceeds |VTP|**, a channel forms and the current increases in the negative direction (typical PMOS behavior).  
+The device reaches **saturation** when **VSD ≥ VSG – |VTP|**, shown by the flat region in the plot.  
+PMOS currents are generally lower than NMOS due to **lower hole mobility**.
 
 # 2️⃣ CMOS Inverter Analysis
 
