@@ -27,7 +27,7 @@ The work includes device-level MOSFET analysis, CMOS inverter characterization, 
 
 # 1️⃣ NMOS & PMOS Characterization
 
-### **Concept**
+
 MOSFET I–V characteristics help understand device behavior in linear, saturation, and subthreshold regions.
 
 ---
@@ -61,7 +61,7 @@ MOSFET I–V characteristics help understand device behavior in linear, saturati
 
 **Explanation:**  
 In the *ID–VGS* curve, the current stays almost zero when **VGS < VTH** — this is the **cutoff region**, where no channel is formed.  
-Once **VGS crosses VTH**, the channel begins to form and the drain current increases; this corresponds to the **linear/ohmic region**.  
+Once **VGS crosses VTH**, the channel begins to form and the drain current increases; this corresponds to the **linear/ohmic region/Resistive **.  
 When the condition **VDS ≥ VGS – VTH** is met, the MOSFET enters **saturation**, visible as the flatter portion of the curve.  
 A slight upward slope even in saturation is due to **channel-length modulation**, where ID increases slightly with VDS.
 
