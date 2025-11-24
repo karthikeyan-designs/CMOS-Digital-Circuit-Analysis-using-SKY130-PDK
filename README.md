@@ -25,17 +25,18 @@ The work includes device-level MOSFET analysis, CMOS inverter characterization, 
 
 ---
 
-# # 1️⃣ NMOS & PMOS Characterization
+# 1️⃣ NMOS & PMOS Characterization
 
 ### **Concept**
-MOSFET I–V characteristics help analyze device behavior across linear, saturation, and subthreshold regions.
+MOSFET I–V characteristics help understand device behavior in linear, saturation, and subthreshold regions.
 
 ---
 
 ### **Procedure**
-- Created NMOS and PMOS schematic test benches in Xschem  
+- Designed NMOS and PMOS characterization schematics in Xschem  
 - Performed DC sweep of **VGS (0–1.8 V)** at fixed **VDS**  
-- Observed and plotted **VGS vs IDS** characteristics using Ngspice  
+- Simulated using Ngspice  
+- Extracted **ID–VGS** and **ID–VDS** curves  
 
 ---
 
@@ -52,15 +53,21 @@ MOSFET I–V characteristics help analyze device behavior across linear, saturat
 ### **Plots**
 
 #### **NMOS**
-- **Schematic:** `nmos_sch.png`  
-- **I–V Characteristics (VGS vs IDS):** `nmos_wave.png`
+**Schematic:**  
+![NMOS Schematic](CMOS_DIGITAL_ANALYSIS_SCREENSHOTS/nmos_sch.png)
 
-#### **PMOS**
-- **Schematic:** `pmos_sch.png`  
-- **I–V Characteristics (VGS vs IDS):** `pmos_wave.png`
-
+**I–V Characteristics:**  
+![NMOS I–V Plot](CMOS_DIGITAL_ANALYSIS_SCREENSHOTS/nmos_wave.png)
 
 ---
+
+#### **PMOS**
+**Schematic:**  
+![PMOS Schematic](CMOS_DIGITAL_ANALYSIS_SCREENSHOTS/pmos_sch.png)
+
+**I–V Characteristics:**  
+![PMOS I–V Plot](CMOS_DIGITAL_ANALYSIS_SCREENSHOTS/pmos_wave.png)
+
 
 # 2️⃣ CMOS Inverter Analysis
 
