@@ -40,14 +40,6 @@ MOSFET I–V characteristics help understand device behavior in linear, saturati
 
 ---
 
-### **Results**  
-(Replace values accordingly)
-
-| Device | Vth (approx) | Idsat |
-|--------|--------------|--------|
-| NMOS   | XXX V        | XXX µA |
-| PMOS   | XXX V        | XXX µA |
-
 ---
 
 ### **Plots**
@@ -79,6 +71,14 @@ In the *ID–VGS (or ID–VSG)* curve for PMOS, the drain current is nearly zero
 When **VSG exceeds |VTP|**, a channel forms and the current increases in the negative direction (typical PMOS behavior).  
 The device reaches **saturation** when **VSD ≥ VSG – |VTP|**, shown by the flat region in the plot.  
 PMOS currents are generally lower than NMOS due to **lower hole mobility**.
+
+### Ngspice Commands (Interactive)
+
+```spice
+.dc vgs 0 1.8 1m vds 0 1.8
+plot  vgs 
+plot  vds
+````
 
 # 2️⃣ CMOS Inverter Analysis
 
