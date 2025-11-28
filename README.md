@@ -1,4 +1,4 @@
-# CMOS Digital Circuit Analysis using SKY130 PDK
+<img width="1853" height="1047" alt="SYMBOL_INVERTER" src="https://github.com/user-attachments/assets/c1e973ca-02c1-45cd-9f34-474aa532ad1a" /># CMOS Digital Circuit Analysis using SKY130 PDK
 
 This repository presents the design, simulation, layout, and characterization of CMOS digital circuits using the SKY130 open-source PDK.  
 The work includes device-level MOSFET analysis, CMOS inverter characterization, layout verification, and post-layout simulations using open-source VLSI tools.
@@ -104,7 +104,7 @@ Key parameters characterized:
 ![Inverter Schematic](CMOS_DIGITAL_ANALYSIS_SCREENSHOTS/inverter_schematic.png)
 
 **Inverter Symbol:**  
-![Inverter Symbol](CMOS_DIGITAL_ANALYSIS_SCREENSHOTS/inverter_symbol.png)
+![Inverter Symbol](CMOS_DIGITAL_ANALYSIS_SCREENSHOTS/SYMBOL_INVERTER.png)
 
 ---
 
