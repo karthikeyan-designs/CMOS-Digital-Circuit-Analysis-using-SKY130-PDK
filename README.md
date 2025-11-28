@@ -82,24 +82,53 @@ plot  vds
 
 # 2️⃣ CMOS Inverter Analysis
 
-### **Concept**
-The CMOS inverter is the basic digital logic element.  
-Important parameters:
-- Voltage Transfer Curve (VTC)  
-- Switching threshold (VM)  
-- Noise margins (NMH, NML)  
-- Rise time, fall time  
-- Propagation delay (tpHL, tpLH)  
+## **Concept**
+The CMOS inverter is the fundamental building block of digital logic.  
+Key parameters characterized:
 
-### **Procedure**
-- Designed inverter using sky130_fd_pr models  
-- Performed DC sweep for VTC  
-- Applied pulse input for transient simulation  
+- **Voltage Transfer Curve (VTC)**
+- **Switching Threshold (VM)**
+- **Noise Margins (NMH, NML)**
+- **Rise and Fall Time**
+- **Propagation Delays (tpHL, tpLH)**
 
-### **Results**  
-(Replace values)
+---
 
-- Switching threshold, VM ≈ **XXX V**  
+## **Design**
+- Inverter designed using **sky130_fd_pr** devices  
+- **NMOS width = 1 µm**, **PMOS width = 2 µm**  
+- Custom **inverter symbol** created in *Xschem*  
+- Testbench prepared for DC sweep and transient analysis  
+
+**Inverter Schematic:**  
+![Inverter Schematic](CMOS_DIGITAL_ANALYSIS_SCREENSHOTS/inverter_schematic.png)
+
+**Inverter Symbol:**  
+![Inverter Symbol](CMOS_DIGITAL_ANALYSIS_SCREENSHOTS/inverter_symbol.png)
+
+---
+
+## **Procedure**
+
+### **1. VTC (Voltage Transfer Curve)**
+- Performed **DC sweep** of VIN from 0 V to VDD  
+- Used NGSpice measurement:
+```spice
+.lib
+.dc vin 0 2 1m
+.save all
+.end
+````
+- Used NGSpice commands
+```spice
+meas dc vm when vin=vout
+````
+
+  
+
+
+
+- Switching threshold, VM ≈ **0.869v**  
 - Noise Margins:  
   - NMH = **XXX V**  
   - NML = **XXX V**  
