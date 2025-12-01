@@ -122,23 +122,57 @@ Key parameters characterized:
 ```spice
 meas dc vm when vin=vout
 ````
+## **Waveforms**
+
+### **1. VTC (Voltage Transfer Curve)**
+![VTC Waveform](CMOS_DIGITAL_ANALYSIS_SCREENSHOTS/vtc_vm.png)
+
+### **VM Measurement (NGSpice Output)**
+![VM Measurement Window](CMOS_DIGITAL_ANALYSIS_SCREENSHOTS/inv_vtcwave.png)
+
+---
+## **Noise Margin Analysis**
+
+### **Noise Margin Plot**
+![Noise Margin Plot](CMOS_DIGITAL_ANALYSIS_SCREENSHOTS/noise_margin.png)
+
+- **VIL = 7.855e-1 V**  
+- **VIH = 1.03344e+0 V**
+
+### **Noise Margin Calculation (NGSpice Window)**
+![Noise Margin Values](CMOS_DIGITAL_ANALYSIS_SCREENSHOTS/noise_values.png)
+
+**Noise Margins:**
+- **NML = 0.7855 V**  
+- **NMH = 0.9666 V**
+  ---
+  ## **Propagation Delay**
+
+### **Propagation Delay Values (NGSpice Output)**
+![Propagation Delay](CMOS_DIGITAL_ANALYSIS_SCREENSHOTS/PD_values.png)
+
+- **tpHL = 3.64e-11 s**  
+- **tpLH = 2.7381e-11 s**  
+- **Propagation Delay = 3.192e-11 s**
+
+---
+
+## **Rise and Fall Times**
+
+- **Rise Time (trise) = 5.0647e-11 s**  
+- **Fall Time (tfall) = 4.046e-11 s**
+
+---
+
+
+## **Transient Response**
+![Transient Waveform](CMOS_DIGITAL_ANALYSIS_SCREENSHOTS/transient.png)
 
   
 
 
 
-- Switching threshold, VM ≈ **0.869v**  
-- Noise Margins:  
-  - NMH = **XXX V**  
-  - NML = **XXX V**  
-- Propagation Delay:  
-  - tpHL = **XXX ps**  
-  - tpLH = **XXX ps**  
-- Rise time = **XXX ns**  
-- Fall time = **XXX ns**
 
-**Waveforms:**  
-_Add VTC and transient images here_
 
 ---
 
