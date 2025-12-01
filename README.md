@@ -82,7 +82,6 @@ plot  vds
 
 # 2️⃣ CMOS Inverter Analysis
 
-## **Concept**
 The CMOS inverter is the fundamental building block of digital logic.  
 Key parameters characterized:
 
