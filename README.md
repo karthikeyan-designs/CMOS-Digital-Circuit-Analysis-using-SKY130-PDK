@@ -127,6 +127,61 @@ meas dc vm when vin=vout
 ### **1. VTC (Voltage Transfer Curve)**
 ![VTC Waveform](CMOS_DIGITAL_ANALYSIS_SCREENSHOTS/inv_vtcwave.png)
 
+### **VTC Analysis**
+
+The Voltage Transfer Curve (VTC) characterizes the static behavior of the CMOS inverter.  
+It shows how the output voltage (Vout) changes with respect to the input voltage (Vin).  
+A key parameter extracted from the VTC is the **switching threshold (VM)**, the point where:
+
+\[
+V_{in} = V_{out}
+\]
+
+### **Effect of PMOS/NMOS Sizing on VM**
+
+To study device sizing impact, the PMOS width was varied while keeping the NMOS width fixed at **1 µm**:
+
+| NMOS Width | PMOS Width | VM (Measured) |
+|------------|------------|---------------|
+| 1 µm       | 2 µm       | 0.8698 V      |
+| 1 µm       | 4 µm       | 0.8930 V      |
+
+### **Observation**
+
+- Increasing the **PMOS width** shifts the **VM slightly upward**.
+- A stronger PMOS increases the pull-up drive, causing the inverter to switch at a **higher input voltage**.
+
+### Switching Threshold (VM)**
+
+The **switching threshold (VM)** is the input voltage at which the inverter output is exactly at the same voltage level as the input:
+
+\[
+V_{in} = V_{out}
+\]
+
+At this point, both NMOS and PMOS are partially ON, and their drain currents are equal:
+
+\[
+I_{D,n} = I_{D,p}
+\]
+
+VM determines the **logic switching point** of the inverter:
+- If Vin < VM → Output is HIGH  
+- If Vin > VM → Output is LOW  
+
+A properly chosen VM improves noise margins and creates a symmetrical switching characteristic.
+
+The measured values:
+
+- **VM = 0.8698 V** (PMOS = 2 µm)  
+- **VM = 0.8930 V** (PMOS = 4 µm)
+
+These results show how **device sizing directly influences the inverter’s switching point**.  
+A wider PMOS strengthens the pull-up network, requiring a slightly higher Vin for the NMOS to dominate and switch the output LOW.  
+This upward shift is expected and confirms correct transistor behavior.
+
+
+
 ### **VM Measurement (NGSpice Output)**
 ![VM Measurement Window](CMOS_DIGITAL_ANALYSIS_SCREENSHOTS/vtc_vm.png)
 
