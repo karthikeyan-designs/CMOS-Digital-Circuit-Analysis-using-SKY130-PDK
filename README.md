@@ -143,8 +143,45 @@ meas dc vm when vin=vout
 ![Noise Margin Values](CMOS_DIGITAL_ANALYSIS_SCREENSHOTS/nm_values.png)
 
 **Noise Margins:**
+## **Noise Margin Calculation**
+
+### 🔷 **1. NMH (Noise Margin High)**  
+Using the formula:  
+\[
+NMH = VOH - VIH
+\]
+
+Given:  
+- \( VOH = 1.8\,V \)  
+- \( VIH = 1.03344\,V \)
+
+\[
+NMH = 1.8 - 1.03344 = 0.76656\,V
+\]
+
+---
+
+### 🔷 **2. NML (Noise Margin Low)**  
+Using the formula:  
+\[
+NML = VIL - VOL
+\]
+
+Given:  
+- \( VIL = 0.7855\,V \)  
+- \( VOL = 0\,V \)
+
+\[
+NML = 0.7855 - 0 = 0.7855\,V
+\]
+
+---
+
+### ✅ **Final Noise Margins**
 - **NML = 0.7855 V**  
-- **NMH = 0.9666 V**
+- **NMH = 0.76656 V**
+
+
   ---
   ## **Propagation Delay**
 
