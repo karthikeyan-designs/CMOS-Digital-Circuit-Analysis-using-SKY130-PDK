@@ -109,7 +109,7 @@ Key parameters characterized:
 
 ## **Procedure**
 
-### **1. VTC (Voltage Transfer Curve)**
+### **1. VTC (Voltage Transfer Characteristics)**
 - Performed **DC sweep** of VIN from 0 V to VDD  
 - Used NGSpice measurement:
 ```spice
