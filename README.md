@@ -191,8 +191,71 @@ This upward shift is expected and confirms correct transistor behavior.
 ### **Noise Margin Plot**
 ![Noise Margin Plot](CMOS_DIGITAL_ANALYSIS_SCREENSHOTS/noise_margin.png)
 
-- **VIL = 7.855e-1 V**  
-- **VIH = 1.03344e+0 V**
+The noise margin defines how much unwanted noise a logic signal can tolerate without causing a wrong output.  
+From the VTC, three important points divide the curve into **three operating regions**:
+
+- **VIL = 0.7855 V**  
+- **VIH = 1.03344 V**  
+- \( VOL \approx 0\,V \), \( VOH \approx 1.8\,V \)
+
+---
+
+### **Three Input Regions of the CMOS Inverter**
+
+#### **1️⃣ Region 1 — Stable Logic LOW (Vin < VIL)**  
+When the input voltage is less than **VIL**, the NMOS is almost OFF and the PMOS is ON.  
+Example:  
+- If **Vin = 0.3 V**, this is well below VIL = 0.7855 V.  
+- Therefore, the inverter output is driven strongly HIGH:
+
+\[
+V_{out} = VOH \approx 1.8\,V
+\]
+
+This region is noise-tolerant to ground-related noise.
+
+---
+
+#### **2️⃣ Region 2 — Transition Region(Indeterminate Region) (VIL < Vin < VIH)**  
+Between **0.7855 V** and **1.03344 V**, both PMOS and NMOS conduct.  
+- The inverter is switching.  
+- A small change in input causes a large change in output (high gain region).  
+
+This region must be avoided in digital logic because noise here can flip the output.
+
+---
+
+#### **3️⃣ Region 3 — Stable Logic HIGH (Vin > VIH)**  
+When the input voltage exceeds **1.03344 V**, NMOS is ON and PMOS is OFF.  
+Example:  
+- If **Vin = 1.4 V**, this is above VIH.  
+- Output is pulled strongly LOW:
+
+\[
+V_{out} = VOL \approx 0\,V
+\]
+
+This region is noise-tolerant to supply-related noise.
+
+---
+
+### **Noise Margins**
+
+Using the standard formulas:
+
+\[
+NMH = VOH - VIH = 1.8 - 1.03344 = 0.76656\,V
+\]
+
+\[
+NML = VIL - VOL = 0.7855 - 0 = 0.7855\,V
+\]
+
+So the inverter can tolerate:
+- **Up to 0.7855 V of noise on logic LOW**  
+- **Up to 0.7666 V of noise on logic HIGH**
+
+These values indicate a robust switching behavior for the designed inverter.
 
 ### **Noise Margin Calculation (NGSpice Window)**
 ![Noise Margin Values](CMOS_DIGITAL_ANALYSIS_SCREENSHOTS/nm_values.png)
