@@ -151,7 +151,7 @@ To study device sizing impact, the PMOS width was varied while keeping the NMOS 
 - Increasing the **PMOS width** shifts the **VM slightly upward**.
 - A stronger PMOS increases the pull-up drive, causing the inverter to switch at a **higher input voltage**.
 
-### Switching Threshold (VM)**
+### **Switching Threshold (VM)**
 
 The **switching threshold (VM)** is the input voltage at which the inverter output is exactly at the same voltage level as the input:
 
