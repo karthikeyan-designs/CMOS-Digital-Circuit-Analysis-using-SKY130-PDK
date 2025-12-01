@@ -140,7 +140,7 @@ meas dc vm when vin=vout
 - **VIH = 1.03344e+0 V**
 
 ### **Noise Margin Calculation (NGSpice Window)**
-![Noise Margin Values](CMOS_DIGITAL_ANALYSIS_SCREENSHOTS/noise_value.png)
+![Noise Margin Values](CMOS_DIGITAL_ANALYSIS_SCREENSHOTS/nm_values.png)
 
 **Noise Margins:**
 - **NML = 0.7855 V**  
