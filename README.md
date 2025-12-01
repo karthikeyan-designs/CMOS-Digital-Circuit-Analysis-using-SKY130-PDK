@@ -125,10 +125,10 @@ meas dc vm when vin=vout
 ## **Waveforms**
 
 ### **1. VTC (Voltage Transfer Curve)**
-![VTC Waveform](CMOS_DIGITAL_ANALYSIS_SCREENSHOTS/vtc_vm.png)
+![VTC Waveform](CMOS_DIGITAL_ANALYSIS_SCREENSHOTS/inv_vtcwave.png)
 
 ### **VM Measurement (NGSpice Output)**
-![VM Measurement Window](CMOS_DIGITAL_ANALYSIS_SCREENSHOTS/inv_vtcwave.png)
+![VM Measurement Window](CMOS_DIGITAL_ANALYSIS_SCREENSHOTS/vtc_vm.png)
 
 ---
 ## **Noise Margin Analysis**
@@ -140,7 +140,7 @@ meas dc vm when vin=vout
 - **VIH = 1.03344e+0 V**
 
 ### **Noise Margin Calculation (NGSpice Window)**
-![Noise Margin Values](CMOS_DIGITAL_ANALYSIS_SCREENSHOTS/noise_values.png)
+![Noise Margin Values](CMOS_DIGITAL_ANALYSIS_SCREENSHOTS/noise_value.png)
 
 **Noise Margins:**
 - **NML = 0.7855 V**  
