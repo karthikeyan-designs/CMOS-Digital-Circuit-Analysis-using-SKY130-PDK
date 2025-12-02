@@ -40,8 +40,6 @@ MOSFET I–V characteristics help understand device behavior in linear, saturati
 
 ---
 
----
-
 ### **Plots**
 
 #### **NMOS**
@@ -702,8 +700,8 @@ INVERTER.spice → Schematic netlist
 
 layout_inv3.spice → Extracted post-layout netlist
 
-🖼️ Schematic vs Layout (Side-by-Side)
-<div style="display:flex; gap:10px;"> <img src="CMOS_DIGITAL_ANALYSIS_SCREENSHOTS/inverter_schematic.png" width="48%" alt="Inverter Schematic"> <img src="CMOS_DIGITAL_ANALYSIS_SCREENSHOTS/inverter_layout.png" width="48%" alt="Inverter Layout"> </div>
+🖼️ Schematic vs Layout
+<div style="display:flex; gap:10px;"> <img src="CMOS_DIGITAL_ANALYSIS_SCREENSHOTS/inverter_schematic.png" width="48%" alt="Inverter Schematic"> <img src="CMOS_DIGITAL_ANALYSIS_SCREENSHOTS/INV_layout.png" width="48%" alt="Inverter Layout"> </div>
 
 Figure: Left – Schematic of the CMOS inverter; Right – Layout created in Magic VLSI.
 
@@ -874,10 +872,21 @@ The post-layout simulation demonstrates:
 The layout is verified to be **DRC clean** and **LVS matched**, ready for fabrication.
 
 ---
-
 ## 📌 Conclusion
-This project demonstrates a complete open-source digital design flow using the SKY130 PDK, covering device-level MOSFET behavior, CMOS inverter analysis, layout verification, and post-layout performance evaluation.
+
+This project demonstrates a complete **open-source VLSI design flow** using the **SkyWater SKY130 PDK**, covering schematic design, simulation, layout, and verification of a CMOS inverter.
+
+### **Key Outcomes**
+- Successfully characterized **NMOS** and **PMOS** devices  
+- Designed and simulated a **CMOS inverter** (DC, transient, and power analysis)  
+- Created a **DRC-clean layout** using Magic VLSI  
+- Performed **LVS verification** with Netgen — *circuits match uniquely*  
+- Extracted parasitics and validated **post-layout behavior**  
+- Observed the expected **increase in delay** due to interconnect parasitics  
+
+### **Final Remarks**
+The inverter exhibits **stable switching**, **consistent power consumption**, and correct **layout-to-schematic matching**.  
+This confirms the effectiveness of a **fully open-source VLSI workflow** from design to verification.
 
 ---
 
-## 📁 Repository Structure (Suggested)
