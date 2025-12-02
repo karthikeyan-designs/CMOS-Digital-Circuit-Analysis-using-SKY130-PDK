@@ -300,10 +300,64 @@ NML = 0.7855 - 0 = 0.7855\,V
 
 
   ---
-  ## **Propagation Delay**
+## **Propagation Delay**
 
 ### **Propagation Delay Values (NGSpice Output)**
 ![Propagation Delay](CMOS_DIGITAL_ANALYSIS_SCREENSHOTS/PD_values.png)
+
+### **Propagation Delay Analysis**
+
+Propagation delay defines **how fast a CMOS inverter responds** to a change in its input.  
+It is measured between the **50% point of the input transition** and the **50% point of the output transition**.
+
+The two propagation delays are:
+
+- **TPHL** – Output transition **High → Low**
+- **TPLH** – Output transition **Low → High**
+
+The **average propagation delay** is:
+
+\[
+t_p = \frac{t_{PHL} + t_{PLH}}{2}
+\]
+
+---
+
+### **Rise Time (tr) & Fall Time (tf)**
+
+These measure how long the output waveform takes to complete its transitions.
+
+- **Rise Time (tr):** output transition from **10% → 90% of VDD**  
+  \[
+  t_r = t_{90\%} - t_{10\%}
+  \]
+
+- **Fall Time (tf):** output transition from **90% → 10% of VDD**  
+  \[
+  t_f = t_{90\%} - t_{10\%}
+  \]
+
+---
+
+### **Ngspice Measurement Commands**
+
+#### ** TPHL (High → Low output transition)**
+
+```spice
+.meas tran vin50  WHEN vin=0.9  RISE=2
+.meas tran vout50 WHEN vout=0.9 FALL=2
+
+* tphl = vout50 - vin50
+```
+
+### ** . TPLH (Low → High output transition)**
+```spice
+.meas tran vin50  WHEN vin=0.9  FALL=1
+.meas tran vout50 WHEN vout=0.9 RISE=1
+
+* tplh = vout50 - vin50
+```
+
 
 - **tpHL = 3.64e-11 s**  
 - **tpLH = 2.7381e-11 s**  
@@ -311,12 +365,51 @@ NML = 0.7855 - 0 = 0.7855\,V
 
 ---
 
-## **Rise and Fall Times**
+## **Rise and Fall Times Measurement**
+```spice
+.meas tran tr10 WHEN vout=0.16 RISE=1
+.meas tran tr90 WHEN vout=1.44 RISE=1
+
+* trise = tr90 - tr10
+
+.meas tran tf10 WHEN vout=0.16 FALL=1
+.meas tran tf90 WHEN vout=1.44 FALL=1
+
+* tfall = tf90 - tf10
+
+```
 
 - **Rise Time (trise) = 5.0647e-11 s**  
 - **Fall Time (tfall) = 4.046e-11 s**
 
 ---
+### **Propagation Delay Dependency**
+
+Propagation delay (**tpHL**, **tpLH**) is **not independent**.  
+It depends strongly on the **input waveform** because the delay is measured from:
+
+\[
+\text{Input at 50%} \rightarrow \text{Output at 50%}
+\]
+
+#### **Propagation Delay Depends on the Input**
+- Slow input transition (low slew rate) → **larger delay**
+- Fast input transition (high slew rate) → **smaller delay**
+- Delay is affected by:
+  - Input slew rate  
+  - Load capacitance (CL)  
+  - PMOS/NMOS drive strength  
+---
+
+### **Rise/Fall Time Independence**
+
+Rise time (**tr**) and fall time (**tf**) are mostly **independent of the input**.  
+They depend on the **output node characteristics**, such as:
+
+- Output load capacitance (**CL**)  
+- Transistor drive strength  
+- Output RC path  
+
 
 
 ## **Transient Response**
