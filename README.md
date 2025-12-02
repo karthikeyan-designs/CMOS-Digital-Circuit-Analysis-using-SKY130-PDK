@@ -299,7 +299,7 @@ NML = 0.7855 - 0 = 0.7855\,V
 - **NMH = 0.76656 V**
 
 
-  ---
+---
 ## **Propagation Delay**
 
 ### **Propagation Delay Values (NGSpice Output)**
@@ -411,10 +411,46 @@ They depend on the **output node characteristics**, such as:
 ## **Transient Response**
 ![Transient Waveform](CMOS_DIGITAL_ANALYSIS_SCREENSHOTS/transient.png)
 
+# Transient Response Analysis
+
+The transient response characterizes the dynamic switching behavior of the CMOS inverter under time-varying input conditions.
+
+## Key Observations
+
+### 1. Clean Logic Transitions
+- The output (red) successfully inverts the input (blue), switching between **0V (logic low)** and **~1.8V (logic high)**
+- Sharp transition edges indicate good switching performance
+
+### 2. Propagation Delays
+- **tpHL (High-to-Low delay)**: Output falls faster due to stronger NMOS pull-down
+- **tpLH (Low-to-High delay)**: Output rises slower due to weaker PMOS pull-up
+- This asymmetry is expected given the NMOS/PMOS sizing ratio (1µm vs 2µm/4µm)
+
+### 3. Rise and Fall Times
+- **Fall time (tf)**: Sharper/faster transition when output goes low
+- **Rise time (tr)**: Slightly slower transition when output goes high
+- This confirms the mobility difference between electrons (NMOS) and holes (PMOS)
+
+### 4. Overshoot/Undershoot
+Minor spikes at transitions are typical due to:
+- Parasitic capacitances and inductances
+- Gate charge injection during switching
+- These are generally acceptable in digital circuits if within noise margins
+
+
+## Waveform Analysis
+
+The transient simulation validates:
+- Proper inverter operation with full rail-to-rail swing
+- Fast switching response suitable for digital applications
+- Asymmetric delays consistent with device sizing
+- Minimal overshoot/undershoot within acceptable limits
+
+## Interpretation
+
+The transient response shows typical CMOS switching behavior with minor overshoot/undershoot at transition edges. These artifacts result from parasitic capacitances and charge injection during MOSFET switching, and remain well within acceptable noise margins for digital operation.
+
   
-
-
-
 
 
 ---
