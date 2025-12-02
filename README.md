@@ -691,7 +691,7 @@ Post-layout simulation includes the effects of parasitic capacitances and resist
 - Energy per switching cycle accounts for layout parasitics
 
 
-🧩  Layout vs Schematic (LVS)
+##🧩  Layout vs Schematic (LVS)
 
 LVS (Layout vs Schematic) verifies whether the layout-extracted netlist matches the schematic netlist.
 For this inverter, the comparison is made between:
@@ -700,7 +700,7 @@ INVERTER.spice → Schematic netlist
 
 layout_inv3.spice → Extracted post-layout netlist
 
-🖼️ Schematic vs Layout
+#🖼️ Schematic vs Layout
 <div style="display:flex; gap:10px;"> <img src="CMOS_DIGITAL_ANALYSIS_SCREENSHOTS/inverter_schematic.png" width="48%" alt="Inverter Schematic"> <img src="CMOS_DIGITAL_ANALYSIS_SCREENSHOTS/INV_layout.png" width="48%" alt="Inverter Layout"> </div>
 
 Figure: Left – Schematic of the CMOS inverter; Right – Layout created in Magic VLSI.
