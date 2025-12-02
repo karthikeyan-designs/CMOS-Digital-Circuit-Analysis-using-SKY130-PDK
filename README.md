@@ -526,10 +526,7 @@ Where:
 - **Pdynamic**: Switching power (dominant component)
 - **α**: Switching activity factor
 - **CL**: Load capacitance
-- **f**: Switching frequency
-The measured power represents the total energy consumed during the transient simulation period.
----
-
+- **f**: Switching frequency**
 
 # 3️⃣ Layout, Extraction & LVS
 
