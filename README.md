@@ -527,7 +527,7 @@ Where:
 - **α**: Switching activity factor
 - **CL**: Load capacitance
 - **f**: Switching frequency
--The measured power represents the total energy consumed during the transient simulation period.
+The measured power represents the total energy consumed during the transient simulation period.
 ---
 
 
