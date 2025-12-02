@@ -546,24 +546,139 @@ _Add layout, DRC, and LVS images here_
 
 ---
 
-# 4️⃣ Post-Layout Simulation
+# 3️⃣ Layout, Extraction & LVS
 
-### **Procedure**
-- Simulated extracted netlist including parasitics  
-- Ran transient and VTC analysis  
+## Procedure
 
-### **Pre vs Post Layout Comparison**
-(Replace values)
+1. **Layout Design**
+   - Designed CMOS inverter layout in **Magic VLSI**
+   - Followed DRC (Design Rule Check) guidelines for the 180nm technology
+   - Placed NMOS and PMOS transistors with proper spacing and contacts
 
-| Parameter | Pre-Layout | Post-Layout |
-|----------|------------|-------------|
-| tpHL     | XXX ps     | XXX ps      |
-| tpLH     | XXX ps     | XXX ps      |
-| Rise time | XXX ns    | XXX ns      |
-| Fall time | XXX ns    | XXX ns      |
+2. **DRC Verification**
+   - Ensured the layout is **DRC clean** (zero violations)
+   - Verified metal spacing, poly spacing, and diffusion rules
 
-**Plots:**  
-_Add post-layout waveform images here_
+3. **Netlist Extraction**
+   - Extracted parasitic-aware netlist using Magic's `ext2spice` command
+   - Includes parasitic capacitances and resistances from interconnects
+
+4. **LVS (Layout vs. Schematic)**
+   - Performed LVS check using **Netgen**
+   - Verified that the layout matches the schematic netlist
+   - Ensured all connections and device parameters are correct
+
+## Files Generated
+
+| File | Description |
+|------|-------------|
+| `inverter.mag` | Magic layout file |
+| `extracted.spice` | Extracted netlist with parasitics |
+| `lvs_report.log` | LVS comparison report |
+
+## Layout Design
+
+![CMOS Inverter Layout](CMOS_DIGITAL_ANALYSIS_SCREENSHOTS/INV_layout.png)
+
+*Figure: CMOS inverter layout designed in Magic VLSI showing NMOS, PMOS, power rails, and metal interconnects*
+
+---
+
+# Post-Layout Simulation
+
+## Overview
+
+Post-layout simulation includes the effects of parasitic capacitances and resistances extracted from the physical layout. This provides a more realistic analysis compared to pre-layout (schematic-level) simulation.
+
+## Procedure
+
+1. **Setup**
+   - Used the extracted netlist (`extracted.spice`) from Magic
+   - Included parasitic capacitances and resistances in the simulation
+
+2. **Simulations Performed**
+   - **Transient Analysis**: Dynamic switching behavior
+   - **DC Sweep (VTC)**: Voltage Transfer Characteristics
+   - **Power Analysis**: Energy consumption calculation
+
+3. **Comparison**
+   - Compared post-layout results with pre-layout simulation
+   - Analyzed the impact of parasitics on delay and power
+
+## Simulation Results
+
+### 1. Transient Response
+
+![Post-Layout Transient Waveform](CMOS_DIGITAL_ANALYSIS_SCREENSHOTS/post_tran.png)
+
+*Figure: Post-layout transient response showing input (blue) and output (red) waveforms with parasitic effects*
+
+**Observations:**
+- Output correctly inverts the input signal
+- Transition edges are slightly slower due to parasitic capacitances
+- Clean rail-to-rail switching maintained
+
+### 2. Propagation Delay
+
+![Propagation Delay Measurements](CMOS_DIGITAL_ANALYSIS_SCREENSHOTS/Layout_prop.png)
+
+*Figure: Terminal output showing propagation delay measurements (tpHL, tpLH, tpd)*
+
+**Key Metrics:**
+- **tpHL**: High-to-Low propagation delay
+- **tpLH**: Low-to-High propagation delay  
+- **tpd**: Average propagation delay = (tpHL + tpLH) / 2
+
+**Impact of Parasitics:**
+- Post-layout delays are higher than pre-layout due to:
+  - Wire capacitance
+  - Contact resistance
+  - Interconnect RC delays
+
+### 3. Voltage Transfer Characteristics (VTC)
+
+![VTC Waveform](CMOS_DIGITAL_ANALYSIS_SCREENSHOTS/Layout_tran.png)
+
+*Figure: Post-layout VTC curve showing the DC transfer characteristic*
+
+![VTC Measurement Window](CMOS_DIGITAL_ANALYSIS_SCREENSHOTS/layout_vm.png)
+
+*Figure: ngspice window showing VTC analysis and switching threshold (Vm)*
+
+**Analysis:**
+- Switching threshold (Vm) indicates the symmetry of the inverter
+- Sharp transition region confirms good noise margins
+- VOH and VOL remain close to VDD and GND respectively
+
+### 4. Power Consumption
+
+![Power Consumption Analysis](CMOS_DIGITAL_ANALYSIS_SCREENSHOTS/layout_power.png)
+
+*Figure: Power consumption calculation from post-layout simulation*
+
+**Power Analysis:**
+- Includes both dynamic and static power dissipation
+- Parasitic capacitances increase dynamic power consumption
+- Energy per switching cycle accounts for layout parasitics
+
+## Post-Layout vs Pre-Layout Comparison
+
+| Parameter | Pre-Layout | Post-Layout | Impact |
+|-----------|------------|-------------|--------|
+| **tpHL** | Lower | Higher | +Δt due to parasitics |
+| **tpLH** | Lower | Higher | +Δt due to parasitics |
+| **Power** | Lower | Higher | +ΔP due to parasitic C |
+| **Vm** | Nominal | Slightly shifted | Asymmetry from parasitics |
+
+## Conclusion
+
+The post-layout simulation demonstrates:
+- ✅ **Functional correctness** with parasitic effects included
+- ✅ **Realistic performance metrics** accounting for physical layout
+- ✅ **Increased delays** due to interconnect parasitics (expected behavior)
+- ✅ **Higher power consumption** from parasitic capacitances
+
+The layout is verified to be **DRC clean** and **LVS matched**, ready for fabrication.
 
 ---
 
