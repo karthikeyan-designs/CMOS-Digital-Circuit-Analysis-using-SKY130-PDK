@@ -455,6 +455,83 @@ The transient response shows typical CMOS switching behavior with minor overshoo
 
 ---
 
+## Power Consumption Analysis
+
+Power consumption is calculated by integrating the current drawn from the supply over time and multiplying by the supply voltage.
+
+## Measurement Commands
+```spice
+.meas tran current_inte integ vdd#branch from=0n to=20n
+```
+
+This command integrates the current flowing through the VDD supply over the simulation period (0ns to 20ns).
+
+## Calculation Results
+
+### Current Integration
+```
+current_inte = -3.12007e-14 A·s
+```
+
+**Note:** The negative sign indicates current flowing **into** the supply node. In SPICE convention, current flows from the positive terminal of the voltage source through the circuit. The negative value simply reflects the measurement direction and is expected behavior.
+
+### Power Calculation
+```spice
+let power_int = current_inte * 1.8
+print power_int
+```
+
+**Result:**
+```
+power_int = -5.61612e-14 W·s (or Joules)
+```
+
+### Average Power Consumption
+
+To find the average power over the simulation period:
+```
+Pavg = |power_int| / time_period
+Pavg = 5.61612e-14 / 20e-9
+Pavg = 2.808 nW
+```
+
+## Interpretation
+
+| Parameter | Value | Unit |
+|-----------|-------|------|
+| **Current Integral** | 3.12007e-14 | A·s |
+| **Energy Consumed** | 5.61612e-14 | J (Joules) |
+| **Average Power** | ~2.81 | nW |
+| **Supply Voltage** | 1.8 | V |
+
+### Key Points
+
+- The **negative sign** in the current measurement is due to SPICE's current direction convention (current flows from the voltage source)
+- The **absolute value** is used for power calculations
+- The extremely low power consumption (~2.81 nW) indicates:
+  - Efficient CMOS operation with minimal static current
+  - Power is primarily consumed during switching transitions
+  - Negligible leakage current in this technology node
+
+### Power Components
+
+For a CMOS inverter:
+```
+Ptotal = Pstatic + Pdynamic
+Pdynamic = α × CL × VDD² × f
+```
+
+Where:
+- **Pstatic**: Leakage power (very small in this simulation)
+- **Pdynamic**: Switching power (dominant component)
+- **α**: Switching activity factor
+- **CL**: Load capacitance
+- **f**: Switching frequency
+
+The measured power represents the total energy consumed during the transient simulation period.
+---
+
+
 # 3️⃣ Layout, Extraction & LVS
 
 ### **Procedure**
