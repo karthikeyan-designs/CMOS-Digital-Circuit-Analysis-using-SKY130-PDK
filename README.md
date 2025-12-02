@@ -25,7 +25,7 @@ The work includes device-level MOSFET analysis, CMOS inverter characterization, 
 
 ---
 
-# 1️⃣ NMOS & PMOS Characterization
+# NMOS & PMOS Characterization
 
 
 MOSFET I–V characteristics help understand device behavior in linear, saturation, and subthreshold regions.
@@ -78,7 +78,7 @@ plot  vgs
 plot  vds
 ````
 
-# 2️⃣ CMOS Inverter Analysis
+# CMOS Inverter Analysis
 
 The CMOS inverter is the fundamental building block of digital logic.  
 Key parameters characterized:
@@ -526,7 +526,7 @@ Where:
 - **CL**: Load capacitance
 - **f**: Switching frequency**
 
-# 3️⃣ Layout, Extraction & LVS
+#  Layout, Extraction & LVS
 
 ### **Procedure**
 - Designed inverter layout in Magic  
@@ -544,7 +544,7 @@ _Add layout, DRC, and LVS images here_
 
 ---
 
-# 3️⃣ Layout, Extraction & LVS
+#  Layout, Extraction & LVS
 
 ## Procedure
 
@@ -691,7 +691,7 @@ Post-layout simulation includes the effects of parasitic capacitances and resist
 - Energy per switching cycle accounts for layout parasitics
 
 
-🧩 4️⃣ Layout vs Schematic (LVS)
+🧩  Layout vs Schematic (LVS)
 
 LVS (Layout vs Schematic) verifies whether the layout-extracted netlist matches the schematic netlist.
 For this inverter, the comparison is made between:
@@ -742,7 +742,7 @@ Final result: Circuits match uniquely.
 Property errors were found.
 ```
 
-![LVS Output Screenshot](screenshots/lvs.png)
+![LVS Output Screenshot](CMOS_DIGITAL_ANALYSIS_SCREENSHOTS/lvs.png)
 
 *Figure: Netgen LVS comparison output showing circuit match status*
 
@@ -780,7 +780,7 @@ W circuit1: 1   circuit2: 2  (delta=66.7%, cutoff=1%)
 
 ---
 
-## ✅ LVS Verification Summary
+##  LVS Verification Summary
 
 | Check | Status | Notes |
 |-------|--------|-------|
@@ -864,10 +864,10 @@ The 2.5× increase in propagation delay is within expected range for post-layout
 ## Conclusion
 
 The post-layout simulation demonstrates:
-- ✅ **Functional correctness** with parasitic effects included
-- ✅ **Realistic performance metrics** accounting for physical layout
-- ✅ **Increased delays** due to interconnect parasitics (expected behavior)
-- ✅ **Higher power consumption** from parasitic capacitances
+-  **Functional correctness** with parasitic effects included
+-  **Realistic performance metrics** accounting for physical layout
+-  **Increased delays** due to interconnect parasitics (expected behavior)
+-  **Higher power consumption** from parasitic capacitances
 
 The layout is verified to be **DRC clean** and **LVS matched**, ready for fabrication.
 
