@@ -571,23 +571,31 @@ _Add layout, DRC, and LVS images here_
 ## Commands Used (Magic + Netgen)
 
 # Open Magic with SKY130 PDK
+```
 magic -rcfile /usr/local/share/pdk/sky130A/libs.tech/magic/sky130A.magicrc
+```
 
 # Extract layout netlist
+```
 extract all
 ext2spice lvs
 ext2spice
-
+```
 # Run Netgen LVS
+```
 netgen -batch lvs INVERTER.spice layout_inv3.spice \
 /usr/local/share/pdk/sky130A/libs.tech/netgen/sky130A_setup.tcl
+```
 
 # Check device names
+```
 grep -n "sky130_fd_pr__nfet_01v8" INVERTER.spice layout_inv3.spice
+```
 
 # View LVS result
+```
 less comp.out
-
+```
 
 ## Files Generated
 
