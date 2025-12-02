@@ -384,13 +384,9 @@ These measure how long the output waveform takes to complete its transitions.
 
 ---
 ### **Propagation Delay Dependency**
+Propagation delay (**tpHL**, **tpLH**) is **not an independent parameter**.  
+It depends directly on the **input transition shape**, because the delay is measured from the moment the input crosses **50% of VDD** to the moment the output crosses **50% of VDD**.
 
-Propagation delay (**tpHL**, **tpLH**) is **not independent**.  
-It depends strongly on the **input waveform** because the delay is measured from:
-
-\[
-\text{Input at 50%} \rightarrow \text{Output at 50%}
-\]
 
 #### **Propagation Delay Depends on the Input**
 - Slow input transition (low slew rate) → **larger delay**
