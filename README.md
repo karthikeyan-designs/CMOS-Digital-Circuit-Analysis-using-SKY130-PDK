@@ -1,4 +1,4 @@
-# CMOS Digital Circuit Analysis using SKY130 PDK
+# CMOS Circuit Analysis using SKY130 PDK
 
 This repository presents the design, simulation, layout, and characterization of CMOS digital circuits using the SKY130 open-source PDK.  
 The work includes device-level MOSFET analysis, CMOS inverter characterization, layout verification, and post-layout simulations using open-source VLSI tools.
