@@ -595,6 +595,8 @@ less comp.out
 |------|-------------|
 | `inverter.mag` | Magic layout file |
 | `extracted.spice` | Extracted netlist with parasitics |
+| `comp.out` | LVS comparison report (viewed using less comp.out)|
+
 
 
 ## Layout Design
