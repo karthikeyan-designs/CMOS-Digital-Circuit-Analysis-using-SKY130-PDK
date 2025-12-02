@@ -889,6 +889,6 @@ The inverter exhibits **stable switching**, **consistent power consumption**, an
 This confirms the effectiveness of a **fully open-source VLSI workflow** from design to verification.
 
 ---
-## Acknowledgment
-I would like to thank Rajdeep  from the “why RD” YouTube channel for his tutorials on CMOS projects, which helped in understanding key concepts for this work.
----
+### **Acknowledgment**
+
+I would like to sincerely thank Rajdeep from the “Why RD” YouTube channel for his insightful tutorials on CMOS projects, which greatly aided my understanding of key concepts in this work.
